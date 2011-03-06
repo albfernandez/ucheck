@@ -16,17 +16,11 @@
 
   <property name="severity" value="error"/>
 
-  <module name="SuppressionFilter">
-    <property name="file" value="${checkstyle.suppressions.file}"/>
-  </module>
 
   <module name="JavadocPackage">
     <property name="allowLegacy" value="false"/>
   </module>
 
-  <module name="Translation">
-    <property name="severity" value="${translation.severity}"/>
-  </module>
 
   <module name="FileTabCharacter">
     <property name="eachLine" value="false"/>
@@ -38,11 +32,7 @@
 
   <module name="NewlineAtEndOfFile"/>
 
-  <module name="Header">
-    <property name="headerFile" value="${checkstyle.header.file}"/>
-    <property name="fileExtensions" value="java"/>
-    <property name="id" value="header"/>
-  </module>
+
 
   <module name="RegexpSingleline">
     <property name="format" value="\s+$"/>
@@ -61,9 +51,7 @@
     <module name="OneStatementPerLine"/>
 
     <!-- module name="IllegalCatch"/ -->
-    <module name="ImportControl">
-      <property name="file" value="${checkstyle.importcontrol.file}"/>
-    </module>
+
     <module name="IllegalImport"/>
     <module name="IllegalInstantiation"/>
     <module name="IllegalThrows"/>
