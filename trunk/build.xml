@@ -177,6 +177,6 @@
 
 	<target name="main" depends="clean, prep, compile, jar" />
 
-	<target name="hudson" depends="main,junit,checkstyle,findbugs,pmd,cpd,simian"/>
+	<target name="hudson" depends="main,junit,checkstyle,findbugs,pmd,cpd,simian,qunit"/>
 
 </project>
