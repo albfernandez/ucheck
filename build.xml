@@ -19,6 +19,9 @@
 	<property name="struts.jar" value="/usr/share/java/struts-1.2.jar"/>
 	<property name="commons-validator.jar" value="/usr/share/java/commons-validator.jar"/>
 	<property name="junit.jar" value="/usr/share/java/junit4.jar"/>
+	<property name="qunit.dir" value="/opt/java/qunit-test-runner/"/>
+	<property name="qunit.jar" value="qunit-test-runner-0.0.1-SNAPSHOT-jar-with-dependencies.jar"/>
+	
 
 	<property name = "report.dir" value = "reports" />
 	<property name = "instrumented.dir" value="cobertura_instrumented"/>
@@ -30,7 +33,12 @@
 	        <include name="cobertura.jar" />
 	    </fileset>
 	</path>
-
+	<path id="qunit-test-runner.path">
+	  <fileset dir="${qunit.dir}">
+	    <include name="${qunit.jar}" />
+	  </fileset>
+	</path>
+	
 	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
 
 	
@@ -39,7 +47,7 @@
 	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpath="/opt/java/pmd-4.2.5/pmd-4.2.5.jar"/>
 	<taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask" classpath="/opt/java/pmd-4.2.5/pmd-4.2.5.jar"/>
 	<taskdef resource="simiantask.properties" classpath="/opt/java/simian/simian.jar"/>
-
+	<taskdef classpathref="qunit-test-runner.path" resource="tasks.properties"/>  
 
 
 
@@ -121,6 +129,13 @@
 		<cobertura-report format="xml" destdir="${report.dir}" srcdir="${src.dir}" />
 
     </target>
+	
+	<target name="qunit" depends="prep">
+	  <qunit qunitTestFilePattern=".*Test\\.js"
+	         baseDirectory="jstests/"
+	         reportDirectory="${report.dir}">
+	  </qunit>  
+	</target> 
 	
 	<target name="checkstyle" depends="prep" >
 		<checkstyle config="config_checks/checkstyle.xml" failOnViolation="false">
