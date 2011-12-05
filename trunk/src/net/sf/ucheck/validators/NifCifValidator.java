@@ -60,7 +60,11 @@ public class NifCifValidator {
                 control += digito;
             }
         }
-        return (10 - (control % 10));
+        control = (10 - (control % 10)); 
+        if (control == 10){
+        	control = 0;
+        }
+        return control;
     }
 
     /**
