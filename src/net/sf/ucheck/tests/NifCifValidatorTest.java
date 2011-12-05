@@ -35,6 +35,8 @@ public class NifCifValidatorTest extends TestCase {
         Assert.assertTrue(validator.isValidCif("P1103500C"));
         Assert.assertTrue(validator.isValidCif("P0606300B"));
         Assert.assertFalse(validator.isValidCif("P0606300C"));
+        Assert.assertTrue(validator.isValidCif("B53857660"));
+        Assert.assertTrue(validator.isValid("B53857660"));
         
     }
     @Test
