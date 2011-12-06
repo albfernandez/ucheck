@@ -88,11 +88,33 @@ public class NifCifValidator {
      *
      *
      *
+		Tipo de organizaciones a ORDEN EHA/451/2008, DE 20 DE FEBRERO
+A Sociedades anónimas
+B Sociedades de responsabilidad limitada
+C Sociedades colectivas
+D Sociedades comanditarias
+E Comunidades de bienes y herencias yacentes
+F Sociedades cooperativas
+G Asociaciones
+H Comunidades de propietarios en régimen de propiedad horizontal
+J Sociedades civiles, con o sin personalidad jurídica
+N Entidades extranjeras
+P Corporaciones Locales
+Q Organismos públicos
+R Congregaciones e instituciones religiosas
+S Órganos de la Administración del Estado y de las Comunidades Autónomas
+U Uniones Temporales de Empresas
+V Otros tipos no definidos en el resto de claves
+W Establecimientos permanentes de entidades no residentes en España
+
+ K - Formato antiguo. L -
+     * Formato antiguo. M - Formato antiguo. N - Formato antiguo.
+
+     
      * Tipos de Organizaciones (primera letra del CIF) A - Sociedad Anónima. B -
      * Sociedad de responsabilidad limitada. C - Sociedad colectiva. D -
      * Sociedad comanditaria. E - Comunidad de bienes. F - Sociedad cooperativa.
-     * G - Asociación. H - Comunidad de propietarios. K - Formato antiguo. L -
-     * Formato antiguo. M - Formato antiguo. N - Formato antiguo. P -
+     * G - Asociación. H - Comunidad de propietarios. P -
      * Corporación local. Q - Organismo autónomo. S - Organo de la
      * administración.
      *
@@ -105,12 +127,12 @@ public class NifCifValidator {
             return true;
         }
         boolean retVal = false;
-        if (value.matches("[ABCDEFGHKLMN][0-9]{8}")) {
+        if (value.matches("[ABCDEFGHJUV][0-9]{8}")) {
             final int digitoControl = digitoControlCIF(value.substring(1, value
                     .length() - 1));
             final char caracterControl = ("" + digitoControl).charAt(0);
             retVal = (caracterControl == value.charAt(value.length() - 1));
-        } else if (value.matches("[PQS][0-9]{7}[A-J]")) {
+        } else if (value.matches("[NPQRSW][0-9]{7}[A-J]")) {
             final int digitoControl = digitoControlCIF(value.substring(1, value
                     .length() - 1));
             final char caracterControl = LETRAS_CIF.charAt(digitoControl);
