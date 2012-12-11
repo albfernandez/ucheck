@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * 
  * @author alberto
@@ -64,7 +66,7 @@ public class EANValidator {
      * @return
      */
     public boolean isValidEAN8Code(final String code) {
-        if (code == null || "".equals(code)){
+        if (StringUtils.isEmpty(code)){
             return true;
         }
         boolean retVal = false;
@@ -82,7 +84,7 @@ public class EANValidator {
      * @return
      */
     public boolean isValidEAN13Code(final String code) {
-        if (code == null || "".equals(code)){
+        if (StringUtils.isEmpty(code)){
             return true;
         }
         boolean retVal = false;

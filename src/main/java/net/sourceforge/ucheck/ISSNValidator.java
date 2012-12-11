@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * International Standard Serial Number
  * ISO 3297
@@ -85,7 +87,7 @@ public class ISSNValidator {
      */
 
     public boolean isValid(String code) {
-        if (code == null || "".equals(code)) {
+        if (StringUtils.isEmpty(code)) {
             return true;
         }
         return isValidISSNCode(code);

@@ -16,6 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package net.sourceforge.ucheck;
+
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * Comprueba que un codigo de cuenta bancaria es correcto.
  * @author alberto
@@ -43,7 +46,7 @@ public class BankAccountNumberValidator {
      * @return true si es correcto, false en otro caso
      */
     public boolean isValidBankAccountNumber(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         if (value.matches("[0-9]{4}-[0-9]{4}-[0-9]{2}-[0-9]{10}")) {

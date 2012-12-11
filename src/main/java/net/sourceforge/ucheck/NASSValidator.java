@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * Clase para validar el Número de Afiliación a la Seguridad Social (España).
  * 
@@ -43,7 +45,7 @@ public  class NASSValidator {
      * @return
      */
     public boolean isValidNASS(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         if (value.matches("^[0-9]{11,12}$")) {
