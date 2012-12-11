@@ -1,6 +1,6 @@
 /*
     ucheck - A java library for commons validations.
-    Copyright (C) 2008  Alberto Fernandez <infjaf@gmail.com>
+    Copyright (C) 2008-2012  Alberto Fernandez <infjaf@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,6 +37,16 @@ public class NifValidator {
      * Cadena de letras para verificar el CIF.
      */
     private static final String LETRAS_CIF = "JABCDEFGHIJ";
+    
+    
+    public static final NifValidator INSTANCE = new NifValidator();
+    
+    /**
+     * Constructor privado para no permitir instancias
+     */
+    public NifValidator() {
+        super();
+    }
 
     /**
      * Calcula el digito de control de un cif a partir 
@@ -250,10 +260,5 @@ W Establecimientos permanentes de entidades no residentes en España
         return isValidNifNieCif(value);
     }
 
-    /**
-     * Constructor privado para no permitir instancias
-     */
-    public NifValidator() {
-        super();
-    }
+
 }

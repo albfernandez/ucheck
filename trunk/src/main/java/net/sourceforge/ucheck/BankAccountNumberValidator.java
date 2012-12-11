@@ -1,6 +1,6 @@
 /*
     ucheck - A java library for commons validations.
-    Copyright (C) 2008  Alberto Fernandez <infjaf@gmail.com>
+    Copyright (C) 2008-2012  Alberto Fernandez <infjaf@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,13 +22,21 @@ package net.sourceforge.ucheck;
  *
  */
 public class BankAccountNumberValidator {
+	
 
+	public static final BankAccountNumberValidator INSTANCE = new BankAccountNumberValidator();
     /**
      * Pesos de los digitos
      */
     private static final int[] WEIGHTS = new int[] {1, 2, 4, 8, 5, 10, 9, 7,
             3, 6 };
 
+
+    /**
+     */
+    public BankAccountNumberValidator() {
+        super();
+    }
     /**
      * Comprueba que un numero de Cuenta Corriente es correcto.
      * @param value El numero de cuenta a comprobar
@@ -80,10 +88,4 @@ public class BankAccountNumberValidator {
         return officeControl * 10 + accountControl;
     }
 
-    /**
-     * Construtor privado (no se permiten instancias de esta clase).
-     */
-    public BankAccountNumberValidator() {
-        super();
-    }
 }
