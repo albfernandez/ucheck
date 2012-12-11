@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.ucheck.validators;
+package net.sourceforge.ucheck;
 
 /**
  * @author alberto
@@ -27,7 +27,7 @@ package net.sf.ucheck.validators;
  *         guiones o puntos.
  *
  */
-public class NifCifValidator {
+public class NifValidator {
 
     /**
      * Cadena de letras para verificar el NIF.
@@ -253,7 +253,7 @@ W Establecimientos permanentes de entidades no residentes en España
     /**
      * Constructor privado para no permitir instancias
      */
-    public NifCifValidator() {
+    public NifValidator() {
         super();
     }
 }

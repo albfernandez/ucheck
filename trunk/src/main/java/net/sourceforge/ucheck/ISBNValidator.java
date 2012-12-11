@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.ucheck.validators;
+package net.sourceforge.ucheck;
 
 /**
  * 
@@ -23,6 +23,13 @@ package net.sf.ucheck.validators;
  *
  */
 public class ISBNValidator {
+	
+    /**
+     * 
+     */
+    public ISBNValidator(){
+        super();
+    }
 
     /**
      * 
@@ -30,9 +37,13 @@ public class ISBNValidator {
      * @return
      */
     public boolean isValidISBNCode(final String code) {
-        if (code == null || "".equals(code)){
+        
+    	if (code == null || "".equals(code)){
             return true;
         }
+        return false;
+        // TODO Remove dependency on commons-validator
+        /*
         org.apache.commons.validator.ISBNValidator v = 
             new org.apache.commons.validator.ISBNValidator();
         if (v.isValid(code)) {
@@ -40,7 +51,7 @@ public class ISBNValidator {
         } else {
             EANValidator validator = new EANValidator();
             return validator.isValidEAN13Code(code);
-        }
+        }*/
     }
     /**
      * 
@@ -53,12 +64,7 @@ public class ISBNValidator {
         }
         return isValidISBNCode(code);
     }
-    /**
-     * 
-     */
-    public ISBNValidator(){
-        super();
-    }
+
     
     
 }

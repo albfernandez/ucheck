@@ -7,17 +7,15 @@
 
 	<property file="./build.properties" />
 
-	<property name="version" value="0.1.0" />
+	<property name="version" value="0.2" />
 	<property name="build.compiler" value="modern" />
 	<property name="build.dir" value="./classes" />
-	<property name="src.dir" value="./src" />
+	<property name="src.dir" value="./src/main/java" />
+	<property name="src.test.dir" value="./src/test/java" />
 	<property name="jar.file" value="ucheck-${version}" />
 	<property name="jar.file.name" value="dist/${jar.file}.jar" />
 	
 
-	<property name="servlet.jar" value="/usr/share/java/servlet-api.jar"/>
-	<property name="struts.jar" value="/usr/share/java/struts-1.2.jar"/>
-	<property name="commons-validator.jar" value="/usr/share/java/commons-validator.jar"/>
 	<property name="junit.jar" value="/usr/share/java/junit4.jar"/>
 	<property name="qunit.dir" value="/opt/java/qunit-test-runner/"/>
 	<property name="qunit.jar" value="qunit-test-runner-0.0.1-SNAPSHOT-jar-with-dependencies.jar"/>
@@ -52,9 +50,6 @@
 
 
 	<path id="project.class.path">
-		<pathelement path="${struts.jar}" />
-		<pathelement path="${commons-validator.jar}" />
-		<pathelement path="${servlet.jar}"/>
 		<pathelement path="${junit.jar}"/>
 		<pathelement path="${src.dir}" />
 		<pathelement path="${build.dir}"/>
@@ -78,23 +73,20 @@
 
 	<target name="compile">
 		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="on" deprecation="on" includeantruntime="false">
-			<include name="net/sf/ucheck/validators/**/*.java" />
+			<include name="**/*.java" />
 			<classpath refid="project.class.path" />
 		</javac>
 	</target>
 
 
 	<target name="jar">
-		<copy todir="${build.dir}/net/sf/ucheck/validators/javascript/">
-			<fileset dir="${src.dir}/net/sf/ucheck/validators/javascript/" />
-		</copy>
 		<mkdir dir="dist/" />
 		<jar destfile="${jar.file.name}">
 			<fileset dir="./classes/" includes="**/*.*" />
 		</jar>
 	</target>
     <target name = "junit" depends = "compile">
-			<javac  srcdir="${src.dir}" 
+			<javac  srcdir="${src.test.dir}" 
 	                encoding = "ISO-8859-1"
 	                destdir = "${junit.build.dir}"
 	                classpathref = "project.class.path"
@@ -102,7 +94,7 @@
 	                deprecation = "on"
 	                optimize = "on"
 					includeantruntime="false">
-				<include name="net/sf/ucheck/tests/**/*.java" />
+				<include name="**/*.java" />
 	            
 	        </javac>
 		<cobertura-instrument todir="${instrumented.dir}">
@@ -132,7 +124,7 @@
 	
 	<target name="qunit" depends="prep">
 	  <qunit qunitTestFilePattern=".*Test\\.js"
-	         baseDirectory="jstests/"
+	         baseDirectory="src/test/scripts/"
 	         reportDirectory="${report.dir}">
 	  </qunit>  
 	</target> 

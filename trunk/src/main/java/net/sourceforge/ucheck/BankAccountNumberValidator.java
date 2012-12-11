@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.ucheck.validators;
+package net.sourceforge.ucheck;
 /**
  * Comprueba que un codigo de cuenta bancaria es correcto.
  * @author alberto
