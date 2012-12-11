@@ -1,6 +1,6 @@
 /*
     ucheck - A java library for commons validations.
-    Copyright (C) 2008  Alberto Fernandez <infjaf@gmail.com>
+    Copyright (C) 2008-2012  Alberto Fernandez <infjaf@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,6 +23,17 @@ package net.sourceforge.ucheck;
  *
  */
 public class EANValidator {
+	
+	public static final EANValidator INSTANCE = new EANValidator();
+	
+    /**
+     * 
+     */
+
+    public EANValidator() {
+        super();
+    }
+	
     /**
      * 
      * @param code
@@ -90,11 +101,5 @@ public class EANValidator {
     public boolean isValid(final String code) {
         return isValidEAN8Code(code) || isValidEAN13Code(code);
     }
-    /**
-     * 
-     */
 
-    public EANValidator() {
-        super();
-    }
 }

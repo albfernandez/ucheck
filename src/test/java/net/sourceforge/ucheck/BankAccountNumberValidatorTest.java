@@ -1,6 +1,6 @@
 /*
     ucheck - A java library for commons validations.
-    Copyright (C) 2008  Alberto Fernandez <infjaf@gmail.com>
+    Copyright (C) 2008-2012  Alberto Fernandez <infjaf@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
