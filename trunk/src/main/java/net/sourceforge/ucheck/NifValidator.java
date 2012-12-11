@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * @author alberto
  *
@@ -133,7 +135,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si el cif es valido, false en cualquier otro caso
      */
     public  boolean isValidCif(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         boolean retVal = false;
@@ -161,7 +163,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIE valido, false en otro caso
      */
     public  boolean isValidNie(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         boolean retVal = false;
@@ -183,7 +185,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIF valido, false en otro caso.
      */
     public  boolean isValidNif(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         boolean retVal = false;
@@ -240,7 +242,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIF, un CIF o un NIE válido, false en otro caso
      */
     public  boolean isValidNifNieCif(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         return (isValidNif(value) || isValidNie(value) || isValidCif(value));
@@ -254,7 +256,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIF, un CIF o un NIE válido, false en otro caso
      */
     public  boolean isValid(final String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         return isValidNifNieCif(value);

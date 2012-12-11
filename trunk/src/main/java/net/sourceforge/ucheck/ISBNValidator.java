@@ -44,17 +44,9 @@ public class ISBNValidator {
     	if (code == null || "".equals(code)){
             return true;
         }
-        return false;
-        // TODO Remove dependency on commons-validator
-        /*
-        org.apache.commons.validator.ISBNValidator v = 
-            new org.apache.commons.validator.ISBNValidator();
-        if (v.isValid(code)) {
-            return true;
-        } else {
-            EANValidator validator = new EANValidator();
-            return validator.isValidEAN13Code(code);
-        }*/
+        return
+        		isValidISBN10(code) ||
+        		EANValidator.INSTANCE.isValidEAN13Code(code);
     }
     /**
      * 
@@ -67,6 +59,28 @@ public class ISBNValidator {
         }
         return isValidISBNCode(code);
     }
+    
+    public boolean isValidISBN10(final String code) {
+    	if (code == null || "".equals(code)){
+    		return true;
+    	}
+    	if (code.length() != 10){
+    		return false;
+    	}
+    	int suma = 0;
+    	for (int i = 0; i < 10; i++) {
+    		char c = code.charAt(i);
+    		if (c == 'X'){
+    			suma += 10 * (10-i);
+    		}
+    		else {
+    			suma += Integer.parseInt(Character.toString(c)) *(10-i);
+    		}
+    	}
+    	return suma % 11 == 0;    	
+ 	
+    }
+
 
     
     

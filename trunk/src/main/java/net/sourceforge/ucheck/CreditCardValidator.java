@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 public class CreditCardValidator {
 	public static final CreditCardValidator INSTANCE = new CreditCardValidator();
 	
@@ -33,7 +35,7 @@ public class CreditCardValidator {
      * @return
      */
     public boolean isValid(String value) {
-        if (value == null || "".equals(value)) {
+        if (StringUtils.isEmpty(value)) {
             return true;
         }
         if (value.matches("^[0-9]{16}$")) {
