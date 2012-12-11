@@ -19,8 +19,9 @@ package net.sourceforge.ucheck;
 
 /**
  * 
- * @author alberto
- *
+ * http://en.wikipedia.org/wiki/European_Article_Number
+ * http://en.wikipedia.org/wiki/ISBN
+ * http://www.isbn.org/standards/home/isbn/transition.asp
  */
 public class ISBNValidator {
 	
