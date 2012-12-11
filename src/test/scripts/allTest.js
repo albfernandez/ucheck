@@ -5,7 +5,7 @@ loadFiles([
   // "../src/net/sf/ucheck/validators/javascript/validateCifNieFunction.js",
   // "../src/net/sf/ucheck/validators/javascript/validateNieFunction.js",
   // "../src/net/sf/ucheck/validators/javascript/validateNifCifFunction.js",
-   "../src/net/sf/ucheck/validators/javascript/validateNifFunction.js",
+  "../../main/scripts/validateNifFunction.js",
   // "../src/net/sf/ucheck/validators/javascript/validateNifNieCifFunction.js",
   // "../src/net/sf/ucheck/validators/javascript/validateNifNieFunction.js",
   // test files

@@ -1,6 +1,5 @@
-package net.sf.ucheck.tests;
+package net.sourceforge.ucheck;
 
-import net.sf.ucheck.validators.ISSNValidator;
 
 import org.junit.Test;
 

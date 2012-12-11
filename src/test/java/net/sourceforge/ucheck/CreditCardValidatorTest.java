@@ -1,8 +1,7 @@
-package net.sf.ucheck.tests;
+package net.sourceforge.ucheck;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import net.sf.ucheck.validators.CreditCardValidator;
 
 import org.junit.Test;
 

@@ -15,18 +15,18 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.ucheck.tests;
+package net.sourceforge.ucheck;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import net.sf.ucheck.validators.NifCifValidator;
+
 
 import org.junit.Test;
 
-public class NifCifValidatorTest extends TestCase {
+public class NifValidatorTest extends TestCase {
     @Test
     public final void testIsValidCIF() {
-        NifCifValidator validator = new NifCifValidator();
+        NifValidator validator = new NifValidator();
         Assert.assertTrue(validator.isValidCif("B24489577"));
         Assert.assertFalse(validator.isValidCif("B24489578"));
         Assert.assertTrue(validator.isValidCif(null));
@@ -41,7 +41,7 @@ public class NifCifValidatorTest extends TestCase {
     }
     @Test
     public final void testIsValidNIE() {
-        NifCifValidator validator = new NifCifValidator();
+        NifValidator validator = new NifValidator();
         Assert.assertTrue(validator.isValidNie("X1234567L"));
         Assert.assertTrue(validator.isValidNie("Y1234567L"));
         Assert.assertTrue(validator.isValidNie("Z1234567L"));
@@ -51,7 +51,7 @@ public class NifCifValidatorTest extends TestCase {
     }
     @Test
     public final void testIsValidNIF() {
-        NifCifValidator validator = new NifCifValidator();
+        NifValidator validator = new NifValidator();
         Assert.assertTrue(validator.isValidNif("22222222J"));
         Assert.assertFalse(validator.isValidNif("22222222X"));
         Assert.assertTrue(validator.isValidNif(null));
@@ -60,7 +60,7 @@ public class NifCifValidatorTest extends TestCase {
     }
     @Test
     public final void testIsValid() {
-        NifCifValidator validator = new NifCifValidator();
+        NifValidator validator = new NifValidator();
         Assert.assertTrue(validator.isValid("B24489577"));
         Assert.assertFalse(validator.isValid("B24489578"));
         Assert.assertTrue(validator.isValid("22222222J"));
@@ -73,7 +73,7 @@ public class NifCifValidatorTest extends TestCase {
     
     @Test
     public final void testGeneral () {
-        NifCifValidator validator = new NifCifValidator();
+        NifValidator validator = new NifValidator();
         
         Assert.assertTrue(validator.isValidNifNieCif(""));
         Assert.assertTrue(validator.isValidNifNieCif(null));

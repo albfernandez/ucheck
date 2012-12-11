@@ -1,4 +1,4 @@
-package net.sf.ucheck.validators;
+package net.sourceforge.ucheck;
 
 /**
  * Clase para validar el Número de Afiliación a la Seguridad Social (España).

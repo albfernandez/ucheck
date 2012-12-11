@@ -15,13 +15,12 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.ucheck.tests;
+package net.sourceforge.ucheck;
 
 import org.junit.Test;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import net.sf.ucheck.validators.BankAccountNumberValidator;
 
 public class BankAccountNumberValidatorTest extends TestCase {
 

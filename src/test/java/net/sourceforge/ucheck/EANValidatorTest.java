@@ -1,7 +1,6 @@
-package net.sf.ucheck.tests;
+package net.sourceforge.ucheck;
 
 import junit.framework.TestCase;
-import net.sf.ucheck.validators.EANValidator;
 
 import org.junit.Assert;
 import org.junit.Test;

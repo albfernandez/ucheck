@@ -1,4 +1,4 @@
-package net.sf.ucheck.validators;
+package net.sourceforge.ucheck;
 
 public class CreditCardValidator {
 
