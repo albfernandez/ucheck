@@ -1,6 +1,6 @@
 /*
     ucheck - A java library for commons validations.
-    Copyright (C) 2008-2012  Alberto Fernandez <infjaf@gmail.com>
+    Copyright (C) 2008-2015  Alberto Fernandez <infjaf@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -63,7 +63,7 @@ public class NifValidator {
     private  int digitoControlCIF(final String cif) {
         int control = 0;
         for (int i = 0; i < cif.length(); i++) {
-            int digito = (int) cif.charAt(i) - 48;
+            int digito =  cif.charAt(i) - 48;
             if ((i % 2) == 0) {
                 digito *= 2;
                 control += (digito / 10);
