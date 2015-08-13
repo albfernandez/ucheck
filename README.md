@@ -1,0 +1,1 @@
+ucheck is a library to check validity of users' input. It's oriented to be used with struts validation plugin, but can be used directly from Java code as well.
