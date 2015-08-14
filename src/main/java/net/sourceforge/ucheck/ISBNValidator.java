@@ -17,6 +17,8 @@
  */
 package net.sourceforge.ucheck;
 
+import net.sourceforge.ucheck.utils.StringUtils;
+
 /**
  * 
  * http://en.wikipedia.org/wiki/European_Article_Number
@@ -41,7 +43,7 @@ public class ISBNValidator {
      */
     public boolean isValidISBNCode(final String code) {
         
-    	if (code == null || "".equals(code)){
+    	if (StringUtils.isEmpty(code)){
             return true;
         }
         return
@@ -54,14 +56,16 @@ public class ISBNValidator {
      * @return
      */
     public boolean isValid(final String code) {
-        if (code == null || "".equals(code)) {
+    	
+    	if (StringUtils.isEmpty(code)){
             return true;
         }
         return isValidISBNCode(code);
     }
     
     public boolean isValidISBN10(final String code) {
-    	if (code == null || "".equals(code)){
+    	
+    	if (StringUtils.isEmpty(code)){
     		return true;
     	}
     	if (code.length() != 10){

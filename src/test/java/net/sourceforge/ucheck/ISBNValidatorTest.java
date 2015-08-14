@@ -27,12 +27,15 @@ public class ISBNValidatorTest {
         ISBNValidator validator = new ISBNValidator();
         Assert.assertTrue(validator.isValid(null));
         Assert.assertTrue(validator.isValid(""));
+        Assert.assertTrue(validator.isValidISBN10(null));
+        Assert.assertTrue(validator.isValidISBN10(""));
         Assert.assertTrue(validator.isValidISBNCode(null));
         Assert.assertTrue(validator.isValidISBNCode(""));
         Assert.assertTrue(validator.isValid("9788447356027"));
         Assert.assertFalse(validator.isValid("9788495427796"));
         Assert.assertTrue(validator.isValid("848845757X"));
         Assert.assertTrue(validator.isValid("8476143885"));
+        Assert.assertFalse(validator.isValid("8476143880"));
         
         Assert.assertTrue(validator.isValid("9788439880370"));
         Assert.assertTrue(validator.isValid("8439880375"));
