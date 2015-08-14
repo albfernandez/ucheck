@@ -64,10 +64,10 @@ public class NifValidator {
         int control = 0;
         for (int i = 0; i < cif.length(); i++) {
             int digito =  cif.charAt(i) - 48;
-            if ((i % 2) == 0) {
+            if (i % 2 == 0) {
                 digito *= 2;
-                control += (digito / 10);
-                control += (digito % 10);
+                control += digito / 10;
+                control += digito % 10;
             } else {
                 control += digito;
             }
@@ -143,12 +143,12 @@ W Establecimientos permanentes de entidades no residentes en España
             final int digitoControl = digitoControlCIF(value.substring(1, value
                     .length() - 1));
             final char caracterControl = ("" + digitoControl).charAt(0);
-            retVal = (caracterControl == value.charAt(value.length() - 1));
+            retVal = caracterControl == value.charAt(value.length() - 1);
         } else if (value.matches("[NPQRSW][0-9]{7}[A-J]")) {
             final int digitoControl = digitoControlCIF(value.substring(1, value
                     .length() - 1));
             final char caracterControl = LETRAS_CIF.charAt(digitoControl);
-            retVal = (caracterControl == value.charAt(value.length() - 1));
+            retVal = caracterControl == value.charAt(value.length() - 1);
         }
         return retVal;
 
@@ -195,7 +195,7 @@ W Establecimientos permanentes de entidades no residentes en España
             final int numero = Integer.parseInt(
                     value.substring(0, value.length() - 1));               
             final char letra = LETRAS_NIF.charAt(numero % 23);
-            retVal = (letra == value.charAt(value.length() - 1));
+            retVal = letra == value.charAt(value.length() - 1);
         }
         return retVal;
 
@@ -209,7 +209,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIF o CIF válido, false en otro caso
      */
     public  boolean isValidNifCif(final String value) {
-        return (isValidNif(value) || isValidCif(value));
+        return isValidNif(value) || isValidCif(value);
     }
 
     /**
@@ -220,7 +220,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un NIF o NIE válido, false en otro caso
      */
     public  boolean isValidNifNie(final String value) {
-        return (isValidNif(value) || isValidNie(value));
+        return isValidNif(value) || isValidNie(value);
     }
 
     /**
@@ -231,7 +231,7 @@ W Establecimientos permanentes de entidades no residentes en España
      * @return true si es un CIF o NIE válido, false en otro caso
      */
     public  boolean isValidCifNie(final String value) {
-        return (isValidCif(value) || isValidNie(value));
+        return isValidCif(value) || isValidNie(value);
     }
 
     /**
@@ -245,7 +245,7 @@ W Establecimientos permanentes de entidades no residentes en España
         if (StringUtils.isEmpty(value)) {
             return true;
         }
-        return (isValidNif(value) || isValidNie(value) || isValidCif(value));
+        return isValidNif(value) || isValidNie(value) || isValidCif(value);
     }
 
     /**

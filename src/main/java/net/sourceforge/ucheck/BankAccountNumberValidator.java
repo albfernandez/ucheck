@@ -31,8 +31,7 @@ public class BankAccountNumberValidator {
     /**
      * Pesos de los digitos
      */
-    private static final int[] WEIGHTS = new int[] {1, 2, 4, 8, 5, 10, 9, 7,
-            3, 6 };
+    private static final int[] WEIGHTS = new int[] {1, 2, 4, 8, 5, 10, 9, 7, 3, 6 };
 
 
     /**
@@ -51,9 +50,8 @@ public class BankAccountNumberValidator {
         }
         if (value.matches("[0-9]{4}-[0-9]{4}-[0-9]{2}-[0-9]{10}")) {
             final String[] blocks = value.split("-");
-            final int control = getControlDigits(blocks[0] + blocks[1],
-                    blocks[3]);
-            return (control == Integer.parseInt(blocks[2]));
+            final int control = getControlDigits(blocks[0] + blocks[1], blocks[3]);
+            return control == Integer.parseInt(blocks[2]);
         }
         return false;
     }

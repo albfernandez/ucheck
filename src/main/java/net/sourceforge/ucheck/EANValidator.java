@@ -53,7 +53,7 @@ public class EANValidator {
             }
         }
 
-        int total = (pares * 3) + impares;
+        int total = pares * 3 + impares;
         int check = 10 - (total % 10);
         if (check == 10){
             check = 0;

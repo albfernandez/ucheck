@@ -53,9 +53,9 @@ public  class NASSValidator {
             long codigo = Integer.parseInt(value.substring(2, value.length()-2));
             long control = Integer.parseInt(value.substring(value.length()-2, value.length()));
 
-            final String numero = "" + provincia + codigo;
+            final String numero = Long.toString(provincia) + Long.toString(codigo);
 
-            return ((Long.parseLong(numero) % 97) == control);
+            return Long.parseLong(numero) % 97 == control;
         }
         return false;
 

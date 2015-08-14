@@ -44,7 +44,7 @@ public class CreditCardValidator {
             for (int i = 0; i < value.length(); i += 2) {
                 char c = value.charAt(i);
                 int tmp = Character.getNumericValue(c);
-                tmp = (tmp * 2);
+                tmp = tmp * 2;
                 if (tmp > 9) {
                     tmp = tmp - 9;
                 }
