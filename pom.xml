@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ucheck</groupId>
 	<artifactId>ucheck</artifactId>
-	<version>0.2.1</version>
+	<version>1.0.0</version>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
